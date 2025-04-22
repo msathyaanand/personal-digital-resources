@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SathyaAnand - Digital Resources</title>
+
+  <!-- External CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+
+  <!-- Keep Tailwind config inline if needed for CDN -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'], // Ensure Poppins is the primary sans font
+          },
+        }
+      },
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto p-4 md:p-6 flex justify-between items-center">
+      <div class="flex items-center">
+        <h1 class="text-xl md:text-2xl font-bold text-gray-800">Sathya<span class="text-indigo-600">Anand</span></h1>
+      </div>
+      <nav class="hidden md:flex">
+        <ul class="flex space-x-6">
+          <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition">Home</a></li>
+          <li><a href="#resources" class="text-gray-600 hover:text-indigo-600 transition">Resources</a></li>
+          <li><a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="md:hidden">
+        <button class="text-gray-500 focus:outline-none" id="mobile-menu-button">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <div class="md:hidden hidden bg-white w-full py-3 shadow-inner" id="mobile-menu">
+      <ul class="flex flex-col space-y-3 px-4">
+        <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition block py-2">Home</a></li>
+        <li><a href="#resources" class="text-gray-600 hover:text-indigo-600 transition block py-2">Resources</a></li>
+        <li><a href="#contact" class="text-gray-600 hover:text-indigo-600 transition block py-2">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient text-white py-12 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">Premium Digital Resources</h1>
+      <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Enhance your skills with my curated collection of free and
+        premium digital resources. From technical courses to career development tools.</p>
+      <a href="#resources"
+        class="bg-white text-indigo-700 hover:bg-gray-100 py-3 px-8 rounded-full font-semibold inline-block transition duration-300 shadow-lg">Explore
+        Resources</a>
+      <div class="mt-8 flex justify-center space-x-4">
+        <a href="https://topmate.io/sathyaanand" target="_blank" class="social-icon" title="Topmate"><i
+            class="fas fa-user-friends text-white text-xl"></i></a>
+        <a href="https://www.linkedin.com/in/msathyaanand/" target="_blank" class="social-icon" title="LinkedIn"><i
+            class="fab fa-linkedin-in text-white text-xl"></i></a>
+        <a href="https://x.com/sathyaanand345" target="_blank" class="social-icon" title="Twitter"><i
+            class="fab fa-twitter text-white text-xl"></i></a>
+        <a href="https://chat.whatsapp.com/Bh2R3HSpMUE0C9YBgNkCBe" target="_blank" class="social-icon"
+          title="WhatsApp Community"><i class="fab fa-whatsapp text-white text-xl"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-white py-8 shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center text-center">
+        <div class="w-full md:w-1/3 p-4">
+          <p class="text-4xl font-bold text-indigo-600">18+</p>
+          <p class="text-gray-600 uppercase text-sm font-semibold mt-2">Free Resources</p>
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+          <p class="text-4xl font-bold text-indigo-600">20+</p>
+          <p class="text-gray-600 uppercase text-sm font-semibold mt-2">Premium Resources</p>
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+          <p class="text-4xl font-bold text-indigo-600">600+</p>
+          <p class="text-gray-600 uppercase text-sm font-semibold mt-2">Happy Students</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 section-title">Digital Resources</h2>
+      <div class="max-w-3xl mx-auto mb-8">
+        <div class="search-container">
+          <i class="fas fa-search"></i>
+          <input type="text" id="resource-search"
+            class="search-input w-full px-6 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-full"
+            placeholder="Search resources...">
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row md:space-x-8 mb-8">
+        <div class="w-full md:w-1/4 bg-white p-5 rounded-lg shadow-sm mb-6 md:mb-0">
+          <h3 class="font-semibold text-lg mb-4">Filters</h3>
+          <div id="active-filters" class="mb-4 hidden"></div>
+          <div class="filter-section">
+            <h4 class="font-medium text-gray-700 mb-2">Price</h4>
+            <div class="space-y-2">
+              <label class="flex items-center"> <input type="checkbox" class="price-filter h-4 w-4 text-indigo-600"
+                  value="free" checked> <span class="ml-2 text-gray-700">Free</span> </label>
+              <label class="flex items-center"> <input type="checkbox" class="price-filter h-4 w-4 text-indigo-600"
+                  value="paid" checked> <span class="ml-2 text-gray-700">Paid</span> </label>
+            </div>
+          </div>
+          <div class="filter-section">
+            <h4 class="font-medium text-gray-700 mb-2">Tags</h4>
+            <div class="space-y-2">
+              <label class="flex items-center"> <input type="checkbox" class="tag-filter h-4 w-4 text-indigo-600"
+                  value="bestseller"> <span class="ml-2 text-gray-700">Bestseller</span> </label>
+              <label class="flex items-center"> <input type="checkbox" class="tag-filter h-4 w-4 text-indigo-600"
+                  value="hot"> <span class="ml-2 text-gray-700">Hot Deal</span> </label>
+              <label class="flex items-center"> <input type="checkbox" class="tag-filter h-4 w-4 text-indigo-600"
+                  value="new"> <span class="ml-2 text-gray-700">New</span> </label>
+              <label class="flex items-center"> <input type="checkbox" class="tag-filter h-4 w-4 text-indigo-600"
+                  value="discounted"> <span class="ml-2 text-gray-700">Discounted</span> </label>
+            </div>
+          </div>
+          <button id="reset-filters"
+            class="mt-4 w-full py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition">
+            Reset Filters </button>
+        </div>
+        <div class="w-full md:w-3/4">
+          <div class="bg-white p-4 rounded-lg shadow-sm mb-6 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-gray-600 mb-2 sm:mb-0">Showing <span id="resource-count">26</span> resources</p>
+            <div class="flex items-center">
+              <span class="mr-2 text-gray-700">Sort by:</span>
+              <select id="sort-options"
+                class="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="popularity">Popularity</option>
+                <option value="rating">Highest Rated</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="newest">Newest Added</option>
+              </select>
+            </div>
+          </div>
+          <div id="no-results" class="hidden text-center py-10"> <i
+              class="fas fa-search text-5xl text-gray-300 mb-4"></i>
+            <h3 class="text-xl font-medium text-gray-600">No resources found</h3>
+            <p class="text-gray-500 mt-2">Try adjusting your search or filter criteria</p>
+          </div>
+          <div id="resources-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Resource Cards Start Here (Content Removed for Brevity) -->
+            <div class="card bg-white resource-card" data-title="NVIDIA Free Generative AI Courses" data-tag="hot"
+              data-price="free" data-rating="5" data-popularity="98" data-date="2024-10-15">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(98)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">NVIDIA Free Generative AI Courses</h3>
+                <p class="text-gray-600 mb-4">Comprehensive AI courses by NVIDIA covering generative AI
+                  technologies, techniques, and applications.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹199</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1417683" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Microsoft and LinkedIn Certifications"
+              data-tag="bestseller" data-price="free" data-rating="4.9" data-popularity="95" data-date="2024-10-10">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(95)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Microsoft and LinkedIn Certifications</h3>
+                <p class="text-gray-600 mb-4">Professional certifications from Microsoft and LinkedIn to
+                  boost your credentials and career opportunities.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹299</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1417830" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="CISCO Free Certification Courses" data-tag="hot"
+              data-price="free" data-rating="4.8" data-popularity="90" data-date="2024-10-05">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(90)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">CISCO Free Certification Courses</h3>
+                <p class="text-gray-600 mb-4">Industry-recognized CISCO certification courses for
+                  networking professionals to enhance your skills.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹249</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1417698" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Learn Web Security [Codedamn Course]"
+              data-tag="discounted" data-price="free" data-rating="4.7" data-popularity="78" data-date="2024-09-20">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(78)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Learn Web Security [Codedamn Course]</h3>
+                <p class="text-gray-600 mb-4">Comprehensive course on web security principles,
+                  vulnerabilities, and best practices for secure development.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹25</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1410953" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Learn Python 3 - Python Basics and Fundamentals"
+              data-tag="discounted" data-price="free" data-rating="4.8" data-popularity="85" data-date="2024-09-25">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(85)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Learn Python 3 - Python Basics</h3>
+                <p class="text-gray-600 mb-4">Comprehensive Python course covering fundamentals, data
+                  structures, algorithms, and practical applications.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹25</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1411574" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Python Tips, Tricks & Techniques for Data Science"
+              data-tag="discounted" data-price="free" data-rating="4.6" data-popularity="75" data-date="2024-10-01">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(75)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Python Tips & Tricks for Data Science</h3>
+                <p class="text-gray-600 mb-4">Advanced Python techniques specifically for data science
+                  applications, analytics, and visualization.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹499</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1415593" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Data Science Life Hacks" data-tag="discounted"
+              data-price="free" data-rating="4.7" data-popularity="70" data-date="2024-10-12">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-new">NEW</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(70)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Data Science Life Hacks</h3>
+                <p class="text-gray-600 mb-4">Premium LinkedIn course with practical tips, shortcuts,
+                  and techniques to excel in data science projects.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹499</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1469178" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Prompting Guide by Google" data-tag="new"
+              data-price="free" data-rating="4.9" data-popularity="88" data-date="2024-10-08">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-new">NEW</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(88)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Prompting Guide by Google</h3>
+                <p class="text-gray-600 mb-4">Official guide by Google on creating effective prompts for
+                  AI models to get optimal results from generative AI.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹49</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1416284" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="SQL Must Do List" data-tag="discounted"
+              data-price="free" data-rating="4.6" data-popularity="72" data-date="2024-09-30">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(72)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">SQL Must Do List</h3>
+                <p class="text-gray-600 mb-4">Essential SQL queries, patterns, and techniques every
+                  developer should know for database management.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹99</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1422931" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Master Git with Cheat Sheet" data-tag="bestseller"
+              data-price="free" data-rating="4.8" data-popularity="85" data-date="2024-08-15">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(85)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Master Git with Cheat Sheet</h3>
+                <p class="text-gray-600 mb-4">Comprehensive guide to Git version control with handy
+                  reference sheet for common commands and workflows.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹39</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1358682" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Ultimate Frontend Developer Roadmap"
+              data-tag="bestseller" data-price="free" data-rating="4.9" data-popularity="95" data-date="2024-08-05">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(95)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ultimate Frontend Developer Roadmap</h3>
+                <p class="text-gray-600 mb-4">Complete step-by-step guide to becoming a professional
+                  frontend developer with learning resources.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹59</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1358091" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="50+ Open Source Programs" data-tag="hot"
+              data-price="free" data-rating="4.7" data-popularity="80" data-date="2024-08-20">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(80)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">50+ Open Source Programs</h3>
+                <p class="text-gray-600 mb-4">Collection of open source programs for developers to
+                  learn, contribute, and build their portfolio.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹29</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1359528" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Work from Anywhere - 500+ Remote Jobs"
+              data-tag="discounted" data-price="free" data-rating="4.8" data-popularity="92" data-date="2024-09-25">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(92)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Work from Anywhere - 500+ Remote Jobs</h3>
+                <p class="text-gray-600 mb-4">Curated list of 500+ remote job opportunities across
+                  various industries and skill levels worldwide.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹199</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1422931" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Ultimate HR Talent Acquisition Database"
+              data-tag="discounted" data-price="free" data-rating="4.9" data-popularity="88" data-date="2024-10-05">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(88)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ultimate HR Talent Acquisition Database</h3>
+                <p class="text-gray-600 mb-4">Comprehensive database of 1750+ HR professionals and
+                  recruiters to help you in your job search.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹249</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1446779" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="100 Shortcuts to Crack any Aptitude Exam"
+              data-tag="discounted" data-price="free" data-rating="4.7" data-popularity="87" data-date="2024-07-15">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(87)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">100 Shortcuts to Crack any Aptitude Exam</h3>
+                <p class="text-gray-600 mb-4">Collection of 100 time-saving shortcuts and techniques for
+                  solving aptitude questions in competitive exams.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹99</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1353648" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Free Websites to Check ATS Score" data-tag="free"
+              data-price="free" data-rating="4.5" data-popularity="75" data-date="2024-09-10">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-free">FREE</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(75)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Free Websites to Check ATS Score</h3>
+                <p class="text-gray-600 mb-4">Curated list of free websites to check your resume's ATS
+                  score and optimize it for better job application success.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹19</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1403822" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="115 Indian Unicorns - Top StartUps List"
+              data-tag="free" data-price="free" data-rating="4.6" data-popularity="70" data-date="2024-08-25">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-free">FREE</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(70)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">115 Indian Unicorns - Top StartUps List</h3>
+                <p class="text-gray-600 mb-4">Comprehensive list of 115 Indian unicorn startups with
+                  details on funding, valuation, and business models.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹29</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1390373" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Ace your Resume Email: Get Hired" data-tag="bestseller"
+              data-price="free" data-rating="4.8" data-popularity="85" data-date="2024-07-10">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(85)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ace your Resume Email: Get Hired</h3>
+                <p class="text-gray-600 mb-4">Guide to crafting perfect email pitches when sending your
+                  resume to increase interview chances and stand out.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹25</span> <span
+                      class="current-price text-lg ml-2">FREE</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1352837" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Python LeetCode Solutions" data-tag="discounted"
+              data-price="paid" data-rating="4.9" data-popularity="92" data-date="2024-10-01">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-paid">PAID</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(92)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Python LeetCode Solutions</h3>
+                <p class="text-gray-600 mb-4">Comprehensive collection of Python solutions for LeetCode
+                  problems with detailed explanations and optimal approaches.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹249</span> <span
+                      class="current-price text-lg ml-2">₹15</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1439710" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Java LeetCode Solutions" data-tag="discounted"
+              data-price="paid" data-rating="4.8" data-popularity="85" data-date="2024-10-02">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-paid">PAID</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(85)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Java LeetCode Solutions</h3>
+                <p class="text-gray-600 mb-4">Complete Java solutions for LeetCode problems with
+                  detailed code explanations, time complexity analysis, and optimization techniques.
+                </p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹249</span> <span
+                      class="current-price text-lg ml-2">₹15</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1440593" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Ultimate Tech Interview Prep Bundle" data-tag="hot"
+              data-price="paid" data-rating="4.9" data-popularity="95" data-date="2024-10-10">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(95)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ultimate Tech Interview Prep Bundle</h3>
+                <p class="text-gray-600 mb-4">Complete bundle for tech interview preparation covering
+                  algorithms, data structures, system design, and behavioral questions.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹499</span> <span
+                      class="current-price text-lg ml-2">₹15</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1456223" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Ultimate Java Mastery Series" data-tag="hot"
+              data-price="paid" data-rating="4.9" data-popularity="90" data-date="2024-09-15">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(90)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ultimate Java Mastery Series</h3>
+                <p class="text-gray-600 mb-4">Comprehensive Java course covering fundamentals, advanced
+                  concepts, and practical applications. From Code With Mosh.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹99</span> <span
+                      class="current-price text-lg ml-2">₹149</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1402507" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Linkedin Profile Mastery - Ultimate Cheatsheet"
+              data-tag="bestseller" data-price="paid" data-rating="4.8" data-popularity="95" data-date="2024-07-05">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(95)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">LinkedIn Profile Mastery - Cheatsheet</h3>
+                <p class="text-gray-600 mb-4">Comprehensive guide to optimize your LinkedIn profile for
+                  maximum visibility, connection requests, and job opportunities.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹349</span> <span
+                      class="current-price text-lg ml-2">₹15</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1359359" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Unleash Creativity with ChatGPT: 15,000+ Prompts"
+              data-tag="hot" data-price="paid" data-rating="4.9" data-popularity="93" data-date="2024-09-05">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-hot">HOT
+                    DEAL</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(93)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">15,000+ ChatGPT Prompts Collection</h3>
+                <p class="text-gray-600 mb-4">Massive collection of over 15,000 effective prompts for
+                  ChatGPT to boost productivity and creativity across various domains.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹999</span> <span
+                      class="current-price text-lg ml-2">₹49</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1405111" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="The Ultimate Resume Guide" data-tag="new"
+              data-price="paid" data-rating="4.7" data-popularity="80" data-date="2024-09-20">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-new">NEW</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span
+                      class="text-gray-600 text-sm ml-1">(80)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">The Ultimate Resume Guide</h3>
+                <p class="text-gray-600 mb-4">Comprehensive guide to crafting a perfect resume that
+                  passes ATS systems and impresses recruiters with templates and examples.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹199</span> <span
+                      class="current-price text-lg ml-2">₹10</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1405249" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-white resource-card" data-title="Ultimate Placement Resource Pack" data-tag="bestseller"
+              data-price="paid" data-rating="4.9" data-popularity="97" data-date="2024-07-01">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4"> <span class="tag tag-bestseller">BESTSELLER</span>
+                  <div class="star-rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
+                      class="text-gray-600 text-sm ml-1">(97)</span> </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Ultimate Placement Resource Pack</h3>
+                <p class="text-gray-600 mb-4">All-in-one pack for campus placements with aptitude tests,
+                  interview questions, resume templates, and preparation strategies.</p>
+                <div class="flex justify-between items-center mt-6">
+                  <div> <span class="original-price text-lg">₹499</span> <span
+                      class="current-price text-lg ml-2">₹35</span> </div> <a
+                    href="https://topmate.io/sathyaanand/1352900" target="_blank"
+                    class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6">GET
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+            <!-- Resource Cards End Here -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-indigo-600 py-16 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Advance Your Skills?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Get access to premium resources at unbelievable prices. Start learning
+        today and boost your career prospects!</p> <a href="#resources"
+        class="bg-white text-indigo-600 hover:bg-gray-100 py-3 px-8 rounded-full font-semibold inline-block transition duration-300 shadow-lg">Get
+        Started Now</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 section-title">What My Learners Say</h2>
+      <div class="relative">
+        <button id="scroll-left-btn"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-100 transition hidden sm:block">
+          <i class="fas fa-chevron-left text-indigo-600"></i> </button>
+        <button id="scroll-right-btn"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-100 transition hidden sm:block">
+          <i class="fas fa-chevron-right text-indigo-600"></i> </button>
+        <div id="testimonial-container" class="flex overflow-x-auto scroll-smooth scrollbar-hide space-x-6 pb-4">
+          <div class="testimonial-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+              <div>
+                <div class="star-rating mb-4"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </div>
+                <p class="text-gray-600 mb-4">"The frontend developer roadmap completely changed my career path. I went
+                  from knowing basic HTML to landing a job as a React developer in just 6 months!"</p>
+              </div>
+              <div class="flex items-center mt-4">
+                <div
+                  class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  AR</div>
+                <div class="ml-4">
+                  <p class="font-semibold">Ankit R.</p>
+                  <p class="text-gray-500 text-sm">Web Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+              <div>
+                <div class="star-rating mb-4"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </div>
+                <p class="text-gray-600 mb-4">"The NVIDIA AI courses were incredibly comprehensive and well-structured.
+                  I'm now building my own AI projects and exploring career options in this exciting field."</p>
+              </div>
+              <div class="flex items-center mt-4">
+                <div
+                  class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  PK</div>
+                <div class="ml-4">
+                  <p class="font-semibold">Priya K.</p>
+                  <p class="text-gray-500 text-sm">Data Scientist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+              <div>
+                <div class="star-rating mb-4"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> </div>
+                <p class="text-gray-600 mb-4">"LinkedIn Profile Mastery helped me optimize my profile and start getting
+                  inbound recruiter messages. The practical tips were easy to implement and really effective."</p>
+              </div>
+              <div class="flex items-center mt-4">
+                <div
+                  class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  RS</div>
+                <div class="ml-4">
+                  <p class="font-semibold">Rajan S.</p>
+                  <p class="text-gray-500 text-sm">Marketing Professional</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+              <div>
+                <div class="star-rating mb-4"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </div>
+                <p class="text-gray-600 mb-4">"The Aptitude Exam Shortcuts were a lifesaver! Saved me so much time
+                  during my placement tests. Highly recommend this resource."</p>
+              </div>
+              <div class="flex items-center mt-4">
+                <div
+                  class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  VM</div>
+                <div class="ml-4">
+                  <p class="font-semibold">Vikram M.</p>
+                  <p class="text-gray-500 text-sm">Engineering Student</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+              <div>
+                <div class="star-rating mb-4"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </div>
+                <p class="text-gray-600 mb-4">"Excellent collection of LeetCode solutions. The explanations for both
+                  Python and Java were clear and helped me understand the core concepts."</p>
+              </div>
+              <div class="flex items-center mt-4">
+                <div
+                  class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  SN</div>
+                <div class="ml-4">
+                  <p class="font-semibold">Sneha N.</p>
+                  <p class="text-gray-500 text-sm">Software Engineer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+              <div>
+                <div class="star-rating mb-4"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> </div>
+                <p class="text-gray-600 mb-4">"Found the free resources incredibly valuable, especially the Prompting
+                  Guide and the Git Cheatsheet. Great starting point for anyone learning these skills."</p>
+              </div>
+              <div class="flex items-center mt-4">
+                <div
+                  class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  MJ</div>
+                <div class="ml-4">
+                  <p class="font-semibold">Mohit J.</p>
+                  <p class="text-gray-500 text-sm">Aspiring Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <div id="newsletter" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg shadow-xl overflow-hidden">
+        <div class="px-6 py-12 sm:p-16">
+          <div class="max-w-xl mx-auto lg:max-w-none lg:flex lg:items-center">
+            <div class="lg:w-1/2">
+              <h2 class="text-3xl font-extrabold text-white"> Stay Updated for 2025 </h2>
+              <p class="mt-4 text-lg text-blue-100"> Get the latest AI & data engineering interview tips, resources, and
+                trends directly to your inbox. </p>
+            </div>
+            <div class="mt-8 lg:mt-0 lg:w-1/2">
+              <!-- Form with Tailwind Classes -->
+              <form id="newsletter-form" class="sm:flex">
+                <label for="newsletter-email" class="sr-only">Email address</label>
+                <div class="flex-grow">
+                  <input id="newsletter-email" name="email" type="email" autocomplete="email"
+                    class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-700 focus:ring-white focus:border-white rounded-md"
+                    placeholder="Enter your email">
+
+                  <p id="email-error" class="text-red-400 text-xs mt-1 hidden h-4"></p>
+                </div>
+                <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                  <button type="button" id="newsletter-subscribe-btn"
+                    class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-700 focus:ring-white">
+
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+              <p class="mt-3 text-sm text-blue-100">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
+              <!-- End Form -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Sathya<span class="text-indigo-400">Anand</span></h3>
+          <p class="text-gray-400">Providing quality digital resources to enhance your skills and boost your career.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+            <li><a href="#resources" class="text-gray-400 hover:text-white transition">Resources</a></li>
+            <li><a href="https://msathyaanand.github.io/personal-portfolio/"
+                class="text-gray-400 hover:text-white transition">About Me</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resource Areas</h4>
+          <ul class="space-y-2">
+            <li><a href="#resources" class="text-gray-400 hover:text-white transition">AI & Data Science</a></li>
+            <li><a href="#resources" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+            <li><a href="#resources" class="text-gray-400 hover:text-white transition">Career Resources</a></li>
+            <li><a href="#resources" class="text-gray-400 hover:text-white transition">Interview Prep</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Connect With Me</h4>
+          <div class="flex space-x-4 mb-4"> <a href="https://topmate.io/sathyaanand" target="_blank"
+              class="text-gray-400 hover:text-white transition" title="Topmate"><i class="fas fa-user-friends"></i></a>
+            <a href="https://www.linkedin.com/in/msathyaanand/" target="_blank"
+              class="text-gray-400 hover:text-white transition" title="LinkedIn"><i class="fab fa-linkedin"></i></a> <a
+              href="https://x.com/sathyaanand345" target="_blank" class="text-gray-400 hover:text-white transition"
+              title="Twitter"><i class="fab fa-twitter"></i></a> <a
+              href="https://chat.whatsapp.com/Bh2R3HSpMUE0C9YBgNkCBe" target="_blank"
+              class="text-gray-400 hover:text-white transition" title="WhatsApp Community"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+          <p class="text-gray-400">Email: <a
+              href="/cdn-cgi/l/email-protection#c3a0aca1b7a2a0b783b0a2b7abbab2a2ada2ada7eda0acae"
+              class="hover:text-white transition"><span class="__cf_email__"
+                data-cfemail="bafdf5f4eefbf9eefadafbfaebf2e3fbfbf4fbf4fee4fdf5f7">msathyaanand@gmail.com</span></a></p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>© 2025 SathyaAnand. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Email Decode Script (if needed) -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+  <!-- Link to your External JavaScript File -->
+  <script src="script.js" defer></script>
+
+</body>
+
+</html>

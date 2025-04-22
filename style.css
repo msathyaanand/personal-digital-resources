@@ -1,0 +1,267 @@
+/* style.css */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  /* --- Add background-image URL here if desired --- */
+  background-size: cover;
+  background-position: center;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.question-card:hover,
+.system-design-card:hover,
+.testimonial-card:hover {
+  /* Added testimonial-card */
+  background-color: #f8fafc;
+}
+
+.nav-link:hover {
+  color: #3b82f6;
+}
+
+.hero-subtitle-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sample-answer.hidden {
+  display: none;
+}
+
+.level-tag {
+  display: inline-block;
+  background-color: #e5e7eb;
+  /* bg-gray-200 */
+  color: #4b5563;
+  /* text-gray-600 */
+  font-size: 0.7rem;
+  /* text-xs */
+  font-weight: 500;
+  /* font-medium */
+  margin-right: 0.25rem;
+  /* mr-1 */
+  margin-bottom: 0.25rem;
+  /* mb-1 */
+  padding: 0.125rem 0.5rem;
+  /* px-2 py-0.5 */
+  border-radius: 9999px;
+  /* rounded-full */
+}
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tag {
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 4px 12px;
+  font-weight: 600;
+}
+
+.tag-hot {
+  background-color: #ff4757;
+  color: white;
+}
+
+.tag-bestseller {
+  background-color: #2ed573;
+  color: white;
+}
+
+.tag-new {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.tag-free {
+  background-color: #5352ed;
+  color: white;
+}
+
+.tag-paid {
+  background-color: #ffa502;
+  color: white;
+}
+
+.cta-button {
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+.star-rating {
+  color: #ffc107;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.current-price {
+  font-weight: 700;
+  color: #2ed573;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.filter-option {
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.filter-option:hover {
+  background-color: #e2e8f0;
+}
+
+.filter-option.active {
+  background-color: #667eea;
+  color: white;
+}
+
+.sort-option {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sort-option:hover {
+  color: #667eea;
+}
+
+.sort-option.active {
+  color: #667eea;
+  font-weight: bold;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container i {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+.search-input {
+  padding-left: 45px;
+  border-radius: 9999px;
+}
+
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px 4px 14px;
+  background-color: #ebf4ff;
+  color: #4c51bf;
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.filter-badge i {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.filter-badge i:hover {
+  color: #e53e3e;
+}
+
+.filter-section {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.filter-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Utility to hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
