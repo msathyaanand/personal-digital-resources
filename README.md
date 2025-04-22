@@ -50,7 +50,7 @@ To explore the resources, simply clone or download the repository and open the `
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/sathyaanand-digital-resources.git
+git clone [https://github.com/yourusername/sathyaanand-digital-resources.git](https://github.com/msathyaanand/personal-digital-resources.git)
 
 # Navigate to the project directory
 cd sathyaanand-digital-resources
